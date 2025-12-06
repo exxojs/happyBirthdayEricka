@@ -249,24 +249,46 @@ footer i {
     pointer-events: none; 
 }
 
-
-
+/* --- Media Query for Mobile and Smaller Viewports (max-width: 768px) --- */
 @media (max-width: 768px) {
+    
+    /* Global Background Fixes for Parallax Sections */
+    .parallax-section {
+        /* On small screens, ensure the image is centered */
+        background-position: center center !important; 
+        
+        /* Optional: Disable fixed attachment (true parallax) on mobile */
+        /* This often improves performance and prevents jitter on touch screens. */
+        background-attachment: scroll;
+    }
+
+    /* Shrink text size further for narrow screens if not already done */
     .fade-text {
         font-size: 2em;
     }
+    
     .final-message {
         font-size: 3em;
     }
-    .horizontal-title {
-        font-size: 1.8em;
+
+    /* Adjust content area spacing */
+    .content {
+        padding: 15px;
+        /* The text remains transparent, but if you used a background, this would adjust it */
     }
+
+    /* Horizontal Section Adjustments */
+    .horizontal-scroll-container {
+        height: 50vh; /* Make the container a bit shorter to fit more on screen */
+    }
+
     .flower-card {
-        min-width: 300px;
+        min-width: 80vw; /* Make cards take up most of the screen width */
         height: 40vh;
     }
 }
 
+/* --- Media Query for Extremely Small Phones (max-width: 480px) --- */
 @media (max-width: 480px) {
     .fade-text {
         font-size: 1.5em;
@@ -274,10 +296,7 @@ footer i {
     .final-message {
         font-size: 2em;
     }
-    .content {
-        padding: 10px;
-    }
-    .flower-card {
-        min-width: 250px;
+    .neon-start-button {
+        font-size: 1.2em;
     }
 }
