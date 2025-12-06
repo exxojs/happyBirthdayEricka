@@ -1,0 +1,283 @@
+:root {
+    --purple-neon: #ff00ff; 
+    --background-dark: #1a001a; /* Very Dark Purple */
+    --flower-text: #fff;
+    --footer-height: 40px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-dark);
+    scroll-behavior: smooth;
+    color: var(--flower-text);
+}
+
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden; 
+}
+
+
+
+#page-1 { 
+    background-image: 
+        linear-gradient(rgba(26, 0, 26, 0.4), rgba(26, 0, 26, 0.6)), 
+        url('imgOne.png'); 
+}
+#page-2 { 
+    background-image: 
+        linear-gradient(rgba(26, 0, 26, 0.4), rgba(26, 0, 26, 0.6)), 
+        url('imgFour.png'); 
+}
+#page-3 { 
+    background-image: 
+        linear-gradient(rgba(26, 0, 26, 0.4), rgba(26, 0, 26, 0.6)), 
+        url('imgThree.png'); 
+}
+/* NOTE: Page 4 image goes here */
+#page-5 { 
+    background-image: 
+        linear-gradient(rgba(26, 0, 26, 0.4), rgba(26, 0, 26, 0.6)), 
+        url('imgSix.png'); 
+}
+
+
+.content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+
+    border-radius: 10px;
+    box-shadow: none; 
+
+    
+}
+
+.fade-text {
+    font-size: 3em;
+    color: white;
+    text-shadow: 0 0 10px var(--purple-neon), 0 0 20px var(--purple-neon);
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    margin: 0;
+}
+
+.final-message {
+    font-size: 5em;
+    
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+
+#page-4 {
+    background-image: url('path/to/image4.jpg'); 
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    padding-top: 10vh;
+}
+
+.horizontal-title {
+    font-size: 2.5em;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--purple-neon);
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%; 
+}
+
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row; 
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    width: 100%;
+    height: 60vh; 
+    padding: 20px;
+    gap: 30px;
+    align-items: center;
+    -webkit-overflow-scrolling: touch; 
+    
+
+    scrollbar-color: var(--purple-neon) transparent;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar { height: 10px; background: transparent; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--purple-neon);
+        border-radius: 5px;
+        border: 2px solid var(--background-dark);
+    }
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-corner { display: none; }
+}
+
+/* --- NEW: Styling for the Neon Start Button --- */
+.neon-start-button {
+    /* Reset default button appearance */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0; /* Minimal padding */
+    margin-top: 20px;
+    
+    /* Neon Text Styling (Matches .fade-text) */
+    font-family: inherit;
+    font-size: 1.5em; /* Slightly smaller than the main header */
+    color: white; /* White text */
+    text-shadow: 0 0 5px var(--purple-neon), 0 0 10px var(--purple-neon);
+    
+    /* Animation/Hover effect */
+    transition: all 0.3s ease-in-out;
+}
+
+.neon-start-button:hover {
+    color: var(--purple-neon); /* Glow brighter on hover */
+    text-shadow: 0 0 15px var(--purple-neon), 0 0 25px var(--purple-neon);
+    transform: scale(1.05);
+}
+
+.neon-start-button:focus {
+    outline: none; /* Remove default focus outline */
+    border: 1px dashed rgba(255, 255, 255, 0.5); /* Subtle outline */
+}
+
+.flower-card {
+    min-width: 400px; 
+    height: 50vh;
+    border-radius: 15px;
+    border: 3px solid var(--purple-neon);
+    box-shadow: 0 0 15px var(--purple-neon);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    transition: transform 0.3s ease;
+}
+
+.flower-card:hover {
+    transform: scale(1.05);
+}
+
+.flower-card h2 {
+    color: var(--flower-text);
+    text-shadow: 0 0 5px var(--purple-neon);
+    font-size: 2em;
+}
+
+
+#flower-1 { 
+    background-image: url('lily.jpg'); 
+}
+#flower-2 { 
+    background-image: url('daisy.jpg'); 
+}
+#flower-3 { 
+    background-image: url('tulips.jpg'); 
+}
+#flower-4 { 
+    background-image: url('lav.webp');
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+    background-color: rgba(26, 0, 26, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+footer a {
+    color: var(--purple-neon);
+    text-decoration: none;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px var(--purple-neon);
+}
+
+footer a:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--purple-neon);
+}
+
+footer i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+
+#confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; 
+    pointer-events: none; 
+}
+
+
+
+@media (max-width: 768px) {
+    .fade-text {
+        font-size: 2em;
+    }
+    .final-message {
+        font-size: 3em;
+    }
+    .horizontal-title {
+        font-size: 1.8em;
+    }
+    .flower-card {
+        min-width: 300px;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .fade-text {
+        font-size: 1.5em;
+    }
+    .final-message {
+        font-size: 2em;
+    }
+    .content {
+        padding: 10px;
+    }
+    .flower-card {
+        min-width: 250px;
+    }
+}
